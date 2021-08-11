@@ -14,23 +14,21 @@
 
 <body>
  <div class="login">
+  <a href="{{ url_for('readings')}}">View Oximeter Readings</a>
 	<h1>IOT PULSE OXIMETRY MODEL</h1>
      <h3> Enter the following values to predict COVID-19 infection</h3>
 
      <!-- Main Input For Receiving Query to our ML -->
     <form action="{{ url_for('predict')}}"method="post">
-    	<input type="text" name="enginesize" placeholder="Runny Nose" required="required" />
-    	<input type="text" name="cylinders" placeholder="Fever" required="required" />
-    	<input type="text" name="enginesize" placeholder="Fatigue" required="required" />
-		<input type="text" name="fuel" placeholder="Dry Cough" required="required" />
-        <input type="text" name="fuel" placeholder="Headache" required="required" />
-        <input type="text" name="fuel" placeholder="Shortness Of Breath" required="required" />
-        <input type="text" name="fuel" placeholder="Diarrhea" required="required" />
-        <input type="text" name="fuel" placeholder="Nausea" required="required" />
-        <input type="text" name="fuel" placeholder="Sore Throat" required="required" />
-        <input type="text" name="fuel" placeholder="Vomitting" required="required" />
-        <input type="text" name="fuel" placeholder="SPo2" required="required" />
-        <input type="text" name="fuel" placeholder="Heart Rate" required="required" />
+      <input type="text" name="sneeze" placeholder="Sneeze" required="required" />
+    	<input type="text" name="Runny Nose" placeholder="Runny Nose" required="required" />
+    	<input type="text" name="Fever" placeholder="Fever" required="required" />
+    	<input type="text" name="Fatigue" placeholder="Fatigue" required="required" />
+		<input type="text" name="Dry Cough" placeholder="Dry Cough" required="required" />
+        <input type="text" name="Headache" placeholder="Headache" required="required" />
+        <input type="text" name="Shortness of Breath" placeholder="Shortness Of Breath" required="required" />
+        <input type="text" name="SPo2" placeholder="SPo2" required="required" />
+        <input type="text" name="Heart Rate" placeholder="Heart Rate" required="required" />
         <button type="submit" class="btn">Predict</button>
     </form>
 
