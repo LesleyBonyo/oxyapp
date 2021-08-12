@@ -4,9 +4,13 @@
     <meta name='viewport' content='width=device-width, initial-scale=1.0'>
      <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.7.2/css/all.min.css'>
      <link rel='stylesheet' type='text/css' href='styles.css'>
+     <script src="https://www.gstatic.com/firebasejs/8.9.1/firebase-app.js"></script>
+     <script src="https://www.gstatic.com/firebasejs/8.9.1/firebase-database.js"></script>
      <style>
      body { background-color: #fff; font-family: sans-serif; color: #333333; font: 14px Helvetica, sans-serif; box-sizing: border-box;}
     #page { margin: 20px; background-color: #fff;}
+    #root {color: #000; border-style:none;width: 35px;font-size:26px;font-weight: bold;}
+    #roots {color: #000; border-style:none;width: 35px;font-size:26px;font-weight: bold;}
     p.container { height: inherit; padding-bottom: 20px;}
     .header { padding: 20px;}
     .header h1 { padding-bottom: 0.3em; color: #000; font-size: 45px; font-weight: bold; font-family: Garmond, 'sans-serif'; text-align: center;}
@@ -39,6 +43,26 @@
   
     </head>
     <body>
+        <script>
+            // Your web app's Firebase configuration
+            var firebaseConfig = {
+              apiKey: "AIzaSyABRID8i2Tb8cBDa8MnqPhcVQ3_1q_M5zA",
+              authDomain: "oxyweb-f3703.firebaseapp.com",
+              databaseURL: "https://oxyweb-f3703-default-rtdb.firebaseio.com",
+              projectId: "oxyweb-f3703",
+              storageBucket: "oxyweb-f3703.appspot.com",
+              messagingSenderId: "945038992326",
+              appId: "1:945038992326:web:2a58dc294c06130064c8c7"
+            };
+            // Initialize Firebase
+            firebase.initializeApp(firebaseConfig);
+            var firebaseref = firebase.database().ref('Sensor');
+            firebaseref.on('value', function(snapshot){
+                document.getElementById('root').value=snapshot.val().BPM;
+                document.getElementById('roots').value=snapshot.val().SPO2;
+            });
+        
+          </script>
         <div id='page'>
         <div class='header'>
             <h1>OXY APP</h1>
@@ -48,12 +72,13 @@
         <div class='box-full' align='left'>
         <h2>Sensor Readings</h2>
         <div class='sensors-container'>
-  
+           
     <!--//For Heart Rate-->
         <p class='sensor'>
         <i class='fas fa-heartbeat' style='color:#cc3300'></i>
         <span class='sensor-labels'> Heart Rate </span>
         <!--(int)BPM;-->
+        <input id = "root" type="text"></input>
         <sup class='units'>BPM</sup>
         </p>
         <hr>
@@ -62,15 +87,17 @@
         <p class='sensor'>
         <i class='fas fa-burn' style='color:#f7347a'></i>
         <span class='sensor-labels'> Sp02 </span>
+        <input id = "roots" type="text"></input>
      <!--(int)SpO2;-->
         <sup class='units'>%</sup>
         </p>
-  
+        
     </div>
     </div>
     </div>
     </div>
     </div>
     </body>
+
     </html>
   
