@@ -46,10 +46,10 @@ body {
 	height:100%;
 }
 
-.login h1 { color: #000000;  letter-spacing:1px; text-align:center; }
-h3 { color: #000000;  letter-spacing:1px; text-align:center; }
+.login h1 { color: #000000;  letter-spacing:1px; text-align:center;font-size: small; }
+h3 { color: #000000;  letter-spacing:1px; text-align:center;font-size: small; }
 input {
-	width: 50%;
+	width: 70%;
 	margin-bottom: 10px;
 	background: #000000;
 	border: none;
